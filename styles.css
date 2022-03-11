@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Fredoka";
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background: #FFD7FF;
+}
+
+.memory-game {
+  width: 740px;
+  height: 620px;
+ margin-left: 2vw ;
+ margin-top: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 800px;
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 5px;
+  background: #94D0AA;
+  backface-visibility: hidden;
+}
+
+
+
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+#title{
+  font-size: 40px;
+  margin-top: 20vh;
+  margin-left: 20vh;
+}
+
+#text{
+  font-size: 20px;
+  margin-left: 20vh;
+  margin-top: 20px;
+}
+
+#button{
+  margin-left: 45vh;
+  font-size: 20px;
+  margin-top: 30px;
+  height: 50px;
+  width: 150px;
+  border-radius: 20px;
+  background-color: #94D0AA;
+}
+
+
+
+@media screen and (max-width: 1350px) {
+  #title{
+    font-size: 30px;
+    margin-top: 20vh;
+    margin-left: 10vh;
+  }
+  
+  #text{
+    font-size: 15px;
+    margin-left: 10vh;
+    margin-top: 20px;
+  }
+  
+  #button{
+    margin-left: 22vh;
+    font-size: 20px;
+    margin-top: 30px;
+   
+  }
+
+  .memory-game {
+    width: 840px;
+    height: 640px;
+
+ 
+  }
+  
+}
+@media screen and (max-width: 992px) {
+ #stats{
+   display: none;
+ }
+ .memory-game{
+   display: none;
+ }
+ body{
+   background-image: url("./img/15\ -\ Copia.png");
+   background-repeat: no-repeat;
+background-size: 100% 100%;
+ }
+}
